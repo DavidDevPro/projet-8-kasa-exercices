@@ -6,7 +6,7 @@ import Error404 from "./pages/Error404";
 import Locations from "./pages/Locations";
 import Header from "./components/Header";
 
-const App = () => {
+const Routeur = () => {
   return (
     <Router>
       <Header />
@@ -21,4 +21,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Routeur;

@@ -1,13 +1,15 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Error404 from "./pages/Error404";
 import Locations from "./pages/Locations";
+import Header from "./components/Header";
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <Router>
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -15,7 +17,7 @@ const App = () => {
         <Route path="*" element={<Error404 />} />
         <Route path="/locations" element={<Locations />} />
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 };
 

@@ -1,0 +1,94 @@
+@import "../utils/variables";
+@import "../utils/mixins";
+
+header {
+  @include transition;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+  width: 100%;
+  max-width: 1240px;
+  margin: 45px auto 50px;
+
+  @media screen and (max-width: 1024px) {
+    margin: 32.5px auto 36px;
+    height: 56px;
+  }
+  @media screen and (max-width: 768px) {
+    margin: 20px auto 19px;
+    height: 46px;
+  }
+
+  img {
+    @include transition;
+    padding-left: 19px;
+    height: 68px;
+
+    @media screen and (max-width: 768px) {
+      width: 145px;
+      height: 46px;
+    }
+    @media screen and (max-width: 380px) {
+      width: 110px;
+    }
+  }
+
+  .navigation {
+    padding: 0 19px;
+    ul {
+      @include transition;
+      display: flex;
+      gap: 56px;
+      @media screen and (max-width: 1024px) {
+        gap: 41px;
+      }
+      @media screen and (max-width: 768px) {
+        gap: 26px;
+      }
+      @media screen and (max-width: 380px) {
+        gap: 15px;
+      }
+
+      a {
+        @include font;
+        @include transition;
+        text-decoration: none;
+        color: $third_color;
+        font-size: 1.5em;
+        font-weight: 500;
+
+        @media screen and (max-width: 1024px) {
+          font-size: 1.25em;
+        }
+        @media screen and (max-width: 768px) {
+          font-size: 1em;
+        }
+        @media screen and (max-width: 380px) {
+          font-size: 0.85em;
+        }
+      }
+      .navActive {
+        position: relative;
+        &::after {
+          content: "";
+          height: 2px;
+          width: 0;
+          background-color: $third_color;
+          position: absolute;
+          border-radius: 10px;
+          bottom: -1px;
+          left: 50%;
+          transform: translateX(-50%);
+          animation: anim 400ms ease forwards;
+
+          @keyframes anim {
+            to {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

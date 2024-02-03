@@ -1,0 +1,59 @@
+@import "../utils/variables";
+@import "../utils/mixins";
+
+.homeBanner {
+  @include transition;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 43px;
+
+  @media screen and (max-width: 1024px) {
+    margin-bottom: 33px;
+  }
+  @media screen and (max-width: 768px) {
+    margin-bottom: 22px;
+  }
+
+  img {
+    @include transition;
+    @include shadow;
+    width: 100%;
+    max-width: 1240px;
+    height: 223px;
+    object-fit: cover;
+    border-radius: 25px;
+    filter: brightness(70%);
+
+    @media screen and (max-width: 1024px) {
+      height: 160px;
+      border-radius: 17.5px;
+    }
+    @media screen and (max-width: 768px) {
+      height: 111px;
+      border-radius: 10px;
+    }
+  }
+  h1 {
+    color: $primary_color;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 500;
+    @include transition;
+    @include font;
+    font-size: 3em;
+    width: 100%;
+    text-align: center;
+
+    @media screen and (max-width: 1024px) {
+      font-size: 2em;
+    }
+    @media screen and (max-width: 768px) {
+      font-size: 1.5em;
+      text-align: left;
+      padding-left: 16px;
+    }
+  }
+}

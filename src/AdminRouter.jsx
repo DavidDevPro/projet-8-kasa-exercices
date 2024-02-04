@@ -5,6 +5,7 @@ import About from "./pages/About";
 import Error404 from "./pages/Error404";
 import Locations from "./pages/Locations";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 const AdminRouteur = () => {
   return (
@@ -17,6 +18,7 @@ const AdminRouteur = () => {
         <Route path="/error404" element={<Error404 />} />
         <Route path="*" element={<Error404 />} />
       </Routes>
+      <Footer />
     </Router>
   );
 };

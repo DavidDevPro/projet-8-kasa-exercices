@@ -1,0 +1,38 @@
+@import "../utils/variables";
+@import "../utils/mixins";
+
+footer {
+  @include transition;
+  width: 100%;
+  max-width: 1440px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $secondary_color;
+  padding: 66px 0 29px;
+  gap: 28.5px;
+
+  @media screen and (max-width: 1024px) {
+    padding-bottom: 44px;
+  }
+  @media screen and (max-width: 768px) {
+    padding-bottom: 58px;
+  }
+
+  p {
+    @include transition;
+    color: $primary_color;
+    @include font;
+    font-size: 1.5em;
+    font-weight: 500;
+    padding: 0 10px;
+
+    @media screen and (max-width: 1024px) {
+      font-size: 1.25em;
+    }
+    @media screen and (max-width: 768px) {
+      font-size: 1em;
+    }
+  }
+}

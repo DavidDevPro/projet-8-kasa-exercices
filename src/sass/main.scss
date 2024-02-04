@@ -5,6 +5,8 @@
 @use "./layout/header";
 @use "./layout/footer";
 @use "./pages/homePage";
+@use "./pages/aboutPage";
 @use "./components/homeBanner";
 @use "./components/homeGallery";
 @use "./components/aboutBanner";
+@use "./components/aboutDropList";

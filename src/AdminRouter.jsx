@@ -14,7 +14,7 @@ const AdminRouteur = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/locations" element={<Locations />} />
+        <Route path="/locations/:id" element={<Locations />} />
         <Route path="/error404" element={<Error404 />} />
         <Route path="*" element={<Error404 />} />
       </Routes>

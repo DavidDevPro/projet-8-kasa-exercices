@@ -1,0 +1,65 @@
+@import "../utils/variables";
+@import "../utils/mixins";
+
+.pageError404 {
+  @include font;
+  @include transition;
+  color: $third_color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 139px;
+  margin: 139px auto 139px;
+  padding: 0 19px;
+
+  @media screen and (max-width: 1024px) {
+    gap: 124px;
+    margin: 124px auto;
+  }
+  @media screen and (max-width: 768px) {
+    gap: 113px;
+    margin: 113px auto;
+  }
+
+  h1 {
+    @include transition;
+    font-size: 18em;
+    font-weight: 700;
+
+    @media screen and (max-width: 1024px) {
+      font-size: 12em;
+    }
+    @media screen and (max-width: 768px) {
+      font-size: 6.2em;
+    }
+  }
+
+  p {
+    @include transition;
+    font-size: 2.25em;
+    font-weight: 500;
+
+    @media screen and (max-width: 1024px) {
+      text-align: center;
+      font-size: 1.6em;
+    }
+    @media screen and (max-width: 768px) {
+      font-size: 1.1em;
+    }
+  }
+  a {
+    @include font;
+    color: $third_color;
+    font-weight: 500;
+    font-size: 0.96em;
+    transition: all 300ms ease-in-out;
+
+    @media screen and (max-width: 768px) {
+      font-size: 0.85em;
+    }
+
+    &:hover {
+      font-weight: 600;
+    }
+  }
+}

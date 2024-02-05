@@ -1,0 +1,92 @@
+@import "../utils/variables";
+@import "../utils/mixins";
+
+.caroussel {
+  @include transition;
+  @include shadow;
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto 30px;
+  height: 415px;
+  position: relative;
+  border-radius: 25px;
+  animation: delay ease-in-out 1000ms;
+
+  @keyframes delay {
+    0% {
+      opacity: 0;
+      width: 0;
+    }
+    100% {
+      opacity: 1;
+      width: 100%;
+    }
+  }
+  @media screen and (max-width: 1024px) {
+    height: 315px;
+  }
+  @media screen and (max-width: 768px) {
+    height: 255px;
+  }
+}
+.slider {
+  @include transition;
+  height: 415px;
+  width: 100%;
+  border-radius: 25px;
+  object-fit: cover;
+  @media screen and (max-width: 1024px) {
+    height: 315px;
+  }
+  @media screen and (max-width: 768px) {
+    height: 255px;
+  }
+}
+
+.arrowRight {
+  @include transition;
+  position: absolute;
+  height: 79px;
+  width: 47px;
+  top: 150px;
+  right: 20px;
+  cursor: pointer;
+  @media screen and (max-width: 1024px) {
+    top: 120px;
+    height: 60px;
+    right: 15px;
+  }
+  @media screen and (max-width: 768px) {
+    top: 105px;
+    height: 35px;
+    right: 10px;
+  }
+}
+.arrowLeft {
+  position: absolute;
+  height: 79px;
+  width: 47px;
+  top: 150px;
+  left: 20px;
+  cursor: pointer;
+  @media screen and (max-width: 1024px) {
+    top: 120px;
+    height: 60px;
+    left: 15px;
+  }
+  @media screen and (max-width: 768px) {
+    top: 105px;
+    height: 35px;
+    left: 10px;
+  }
+}
+.slide-indicator {
+  position: absolute;
+  bottom: 7%;
+  right: 50%;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 26px;
+  color: white;
+}

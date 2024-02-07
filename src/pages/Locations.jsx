@@ -3,7 +3,7 @@ import LocationContent from "../components/LocationContent";
 
 const Locations = () => {
   return (
-    <div>
+    <div className="locationPage">
       <LocationContent />
     </div>
   );

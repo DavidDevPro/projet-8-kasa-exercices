@@ -1,0 +1,143 @@
+@import "../utils/variables";
+@import "../utils/mixins";
+
+.locationPage {
+  padding: 0 19px;
+
+  .locationContent {
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+
+    .descriptionTop {
+      @include font;
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 15px;
+      @media screen and (max-width: 768px) {
+        flex-direction: column;
+      }
+      @media screen and (max-width: 400px) {
+        align-items: flex-start;
+      }
+
+      .descriptionTop-left {
+        h1 {
+          @include transition;
+          color: $third_color;
+          font-weight: 500;
+          font-size: 2.25em;
+          margin-bottom: 10px;
+          @media screen and (max-width: 1024px) {
+            font-size: 1.8em;
+          }
+          @media screen and (max-width: 768px) {
+            font-size: 1.3em;
+          }
+        }
+        p:nth-child(2) {
+          color: $third_color;
+          font-weight: 500;
+          font-size: 1.15em;
+          margin-bottom: 25px;
+        }
+        .tags {
+          @include transition;
+          display: flex;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 15px;
+
+          p {
+            color: $primary_color;
+            background-color: $third_color;
+            border-radius: 10px;
+            font-weight: 500;
+            font-size: 0.9em;
+            height: 25px;
+            width: 115px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+      }
+      .descriptionTop-right {
+        @include transition;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        @media screen and (max-width: 768px) {
+          flex-direction: row-reverse;
+          justify-content: space-between;
+          align-items: center;
+          padding: 20px 0;
+        }
+        .personalInfos {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 10px;
+
+          h2 {
+            @include font;
+            color: $third_color;
+            font-size: 1.1em;
+            font-weight: 500;
+          }
+          img {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+          }
+        }
+        .rating {
+          width: 100%;
+          max-width: 200px;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 5px;
+          justify-content: flex-end;
+          padding-bottom: 15px;
+
+          .redStar {
+            color: $third_color;
+            font-size: 2em;
+            @media screen and (max-width: 768px) {
+              font-size: 1.8em;
+            }
+          }
+          .originStar {
+            color: $gallery_color;
+            font-size: 2em;
+            @media screen and (max-width: 768px) {
+              font-size: 1.8em;
+            }
+          }
+        }
+      }
+    }
+    .dropList {
+      @include transition;
+      display: flex;
+      align-items: center;
+      gap: 76px;
+      @media screen and (max-width: 768px) {
+        flex-direction: column;
+        gap: 0;
+        align-items: center;
+        padding: 10px 0;
+        margin-top: 0;
+      }
+
+      .dropListContainer {
+        width: 100%;
+        max-width: 582px;
+      }
+    }
+  }
+}

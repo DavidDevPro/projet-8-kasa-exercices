@@ -1,28 +1,25 @@
-import { useState } from "react";
 import arrowRight from "../assets/img/arrowRight.svg";
 import arrowLeft from "../assets/img/arrowLeft.svg";
+import { useState } from "react";
+import { PropTypes } from "prop-types";
 
 const Caroussel = ({ slides }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const currentSlide = slides[currentIndex];
-  const numSlides = slides.length;
+  const totalSlides = slides.length;
 
   const updateIndex = (increment) => {
     setCurrentIndex((lastIndex) => {
       let newIndex = lastIndex + increment;
 
-      // Gestion du rebouclage si l'index dépasse la plage des diapositives
-      if (newIndex >= numSlides) {
-        newIndex = 0; // Revenir au début si l'index dépasse la fin
-      } else if (newIndex < 0) {
-        newIndex = numSlides - 1; // Revenir à la fin si l'index est inférieur à zéro
-      }
+      newIndex = newIndex >= totalSlides ? 0 : newIndex;
+      newIndex = newIndex < 0 ? totalSlides - 1 : newIndex;
       return newIndex;
     });
   };
 
-  const shouldShowArrows = numSlides > 1;
-  const shouldShowIndicator = numSlides > 1;
+  const showArrows = totalSlides > 1;
+  const showIndicator = totalSlides > 1;
 
   return (
     <div className="caroussel">
@@ -31,29 +28,32 @@ const Caroussel = ({ slides }) => {
         src={currentSlide}
         alt={`Slide ${currentIndex + 1}`}
       />
-      {shouldShowArrows && (
+      {showArrows && (
         <>
           <img
             className="arrowRight"
             src={arrowRight}
-            alt="Flèche Droite"
+            alt="flèche droite"
             onClick={() => updateIndex(1)}
           />
           <img
             className="arrowLeft"
             src={arrowLeft}
-            alt="Flèche Gauche"
+            alt="flèche gauche"
             onClick={() => updateIndex(-1)}
           />
         </>
       )}
-      {shouldShowIndicator && (
-        <div className="slide-indicator">{`${
-          currentIndex + 1
-        }/${numSlides}`}</div>
+      {showIndicator && (
+        <div className="slide-indicator">
+          {`${currentIndex + 1}/${totalSlides}`}
+        </div>
       )}
     </div>
   );
 };
-
 export default Caroussel;
+
+Caroussel.propTypes = {
+  slides: PropTypes.array.isRequiered,
+};

@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import locations from "../data/locations.json";
-import Caroussel from "./caroussel";
+import Caroussel from "./Caroussel";
 import Tags from "./Tags";
 import Rating from "./Rating";
 import DropList from "./DropList";

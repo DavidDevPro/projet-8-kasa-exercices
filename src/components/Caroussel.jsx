@@ -6,11 +6,12 @@ import { PropTypes } from "prop-types";
 const Caroussel = ({ slides }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const currentSlide = slides[currentIndex];
+  console.log(currentIndex);
   const totalSlides = slides.length;
 
   const updateIndex = (increment) => {
-    setCurrentIndex((lastIndex) => {
-      let newIndex = lastIndex + increment;
+    setCurrentIndex((currentIndex) => {
+      let newIndex = currentIndex + increment;
 
       newIndex = newIndex >= totalSlides ? 0 : newIndex;
       newIndex = newIndex < 0 ? totalSlides - 1 : newIndex;
